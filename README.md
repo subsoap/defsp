@@ -14,5 +14,5 @@ Perhaps Defold in the future will include ability to create new projects based o
 This starter project has these features:
 * Fixed aspect ratio render script
 * game.input populated with most useful keys
-* Screen system setup
+* Screen system setup : start, main menu, game, settings, about, sub menu
 * Resource folder hierarchy 
