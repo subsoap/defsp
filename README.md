@@ -1,5 +1,7 @@
 # DefSP
-A clean starter Defold project with useful defaults and includes to help speed up new projects so that you do not have to setup everything over again for each new project. This project is setup for my personal needs first. Feel free to fork it to create a version for your tastes and needs to share.
+A clean starter Defold project with useful defaults and includes to help speed up new projects so that you do not have to setup everything over again for each new project. 
+
+This project is setup for my personal needs first. Feel free to fork it to create a version for your tastes and needs to share.
 
 ## Installation
 
