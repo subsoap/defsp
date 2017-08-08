@@ -7,6 +7,8 @@ This project is setup for my personal needs first. Feel free to fork it to creat
 
 Download a copy of this project and and open its game.project with Defold.
 
+Perhaps Defold in the future will include ability to create new projects based on zips? And subscribe to project template zips based on git urls?
+
 ## Features
 
 This starter project has these features:
