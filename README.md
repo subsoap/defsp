@@ -1,3 +1,5 @@
+Not yet ready still setting up
+
 # DefSP
 A clean starter Defold project with useful defaults and includes to help speed up new projects so that you do not have to setup everything over again for each new project. 
 
@@ -13,6 +15,23 @@ Perhaps Defold in the future will include ability to create new projects based o
 
 This starter project has these features:
 * Fixed aspect ratio render script
+* This version is meant for portrait based projects with resolution of 640x1136
 * game.input populated with most useful keys
 * Screen system setup : start, main menu, game, settings, about, sub menu
 * Resource folder hierarchy 
+
+## Dependencies
+
+These are already setup in the project but listed here for reference.
+*
+*
+*
+
+
+## TODO
+
+* Flexible portait / landscape - atm hardcoded things
+* DefOS native quality of life
+* Sound manager
+* Localization ready to go
+

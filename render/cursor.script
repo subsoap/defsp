@@ -1,0 +1,33 @@
+local render_helper = require "render.render_helper"
+
+function init(self)	
+	self.cursor_position = {}
+	msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	cursor_position = render_helper.action_to_position(action)
+	go.set_position(cursor_position, ".")
+
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

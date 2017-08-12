@@ -1,0 +1,32 @@
+
+local camera_offset_helper = require("utils/camera_offset_helper")
+
+function init(self)
+	self.original_position = go.get_position()
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	if camera_offset_helper.original_x ~= nil then
+		go.set_position(self.original_position + camera_offset_helper.offset)
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
