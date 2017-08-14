@@ -1,0 +1,63 @@
+-- This is an audio manager
+-- Add sounds to collections and then link them via collection proxy in the audio.go
+-- Define which screens audio should be available on, and screen manager
+-- will load / unload banks of sound clips based on current need
+-- if your game doesn't have a ton of audio put it all into the global bank
+-- send this audio manager messages from anywhere with sounds to play
+-- if an audiobank is not loaded yet it will go into a queue to play
+-- You can set the global volume and the volume of specific audio banks
+-- and based on tags
+-- Allows fading out sounds before stopping them such as with music
+
+function init(self)
+	self.master = 0.75
+	self.sfx = 0.5
+	self.music = 0.5
+	self.ambience = 0.5
+	self.voice = 0.5
+	self.pan = 32
+	
+	self.mute_sfx = false
+	self.mute_music = false
+	self.mute_ambience = false
+	self.mute_voice = false
+	
+	self.current_music = nil
+	self.music_playing = false
+	self.fading = false
+	self.fading_volume = 0
+	self.fading_time = 0
+	
+	-- tags
+	self.TAG_SFX = 1
+	self.TAG_MUSIC = 2
+	self.TAG_AMBIENCE = 3
+	self.TAG_VOICE = 4
+	
+	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

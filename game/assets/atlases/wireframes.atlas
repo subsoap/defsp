@@ -1,0 +1,9 @@
+images {
+  image: "/game/assets/images/bg_wireframe.png"
+}
+images {
+  image: "/game/assets/images/bg_wireframe2.png"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 2

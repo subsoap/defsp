@@ -1,4 +1,4 @@
-tile_set: "/assets/images/dots.tilesource"
+tile_set: "/game/assets/images/dots.tilesource"
 layers {
   id: "layer1"
   z: 0.0

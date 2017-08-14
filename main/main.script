@@ -1,3 +1,4 @@
+local router = require("utils.router")
 
 function init(self)
 	msg.post("collectionproxy_loaders#collectionproxy_splash", "async_load")

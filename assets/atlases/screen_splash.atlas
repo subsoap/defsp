@@ -1,9 +1,0 @@
-images {
-  image: "/assets/images/logo_publisher.png"
-}
-images {
-  image: "/assets/images/logo_game.png"
-}
-margin: 0
-extrude_borders: 0
-inner_padding: 4
