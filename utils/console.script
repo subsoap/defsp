@@ -1,9 +1,14 @@
+-- Send this script print messages and it will log them, display them in an overlay, and be able to
+-- hide / show them in the Defold editor console via prints based on tags 
+-- To tag a print add brackets around keywords [] the brackets can be anything
+-- then you can enable or disable ay keywords you want to see in this file easily
+-- this also allows you to hunt down what file is printing something as what script is sending the
+-- message is logged too
+
+
 function init(self)
-	
-	--msg.post("@render:", "clear_color", { color = vmath.vector4(227/255.0, 227/255.0, 227/255.0, 1.0) } )
-	msg.post("@render:", "clear_color", { color = vmath.vector4(0, 0, 0, 1.0) } )
-	
-	--go.animate("/camera_parent","euler.z",go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 10) -- try to not get sick
+	-- Add initialization code here
+	-- Remove this function if not needed
 end
 
 function final(self)

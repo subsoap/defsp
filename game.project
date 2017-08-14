@@ -1,5 +1,6 @@
 [project]
 title = DefSP
+name = defsp
 custom_resources = 
 version = 1.0.4
 dependencies = https://github.com/britzl/defcon/archive/master.zip,https://github.com/britzl/defnet/archive/master.zip,https://github.com/subsoap/defui/archive/master.zip,https://github.com/subsoap/defrs/archive/master.zip

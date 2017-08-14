@@ -1,32 +1,37 @@
 -- This file helps to save / load general config data between game sessions
+-- This file is meant for config settings such as audio volume levels on a settings screen
 -- You can get and set config data using this file
+-- You can require the config_state module and get/set the values there too
+
+config_state = require("utils.config_state")
 
 function init(self)
-	-- Add initialization code here
-	-- Remove this function if not needed
+	self.config_path =  sys.get_save_file(sys.get_config("name", "defsp"),"config_state")
+	self.config_state = sys.load(self.config_path)
+	config_state = self.config_state
+	pprint(config_state)
+end
+
+function save(self)
+	self.config_state = config_state	
+	pprint(config_state)
+	sys.save(self.config_path,config_state)
+	if config_state.console == true then
+		print("Saving Config State")
+	end
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+	save(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash("save") then
+		save(self)
+	end
 end
 
-function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-end
-
-function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
-end

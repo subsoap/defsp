@@ -1,5 +1,6 @@
 local defui = require "defui.defui"
 
+config_state = require("utils.config_state")
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -17,6 +18,7 @@ function on_input(self, action_id, action)
 		msg.post("@system:", "toggle_profile")
 	end)
 	defui:button("btn_info", action_id, action, function()
-		print("hi")
+		config_state.info = "this"
+		pprint(config_state)
 	end)
 end

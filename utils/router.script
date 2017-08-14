@@ -1,0 +1,68 @@
+-- This is a screen router which will change the active screen and load / unload screens
+-- It also can hide/show popups and modals while taking temp focus from active screen while active
+
+local screen_collectionproxy_loader = "main:/collectionproxy_loaders#collectionproxy_"
+
+
+function load_screen(self, screen)
+	assert(not self.loading, "Cannot load a screen while another is already loading!")
+	msg.post(screen_collectionproxy_loader .. screen, "async_load")
+end
+
+function unload_screen(screen)
+		msg.post(screen_collectionproxy_loader .. screen, "release_input_focus")
+        msg.post(screen_collectionproxy_loader .. screen, "disable")
+        msg.post(screen_collectionproxy_loader .. screen, "final")
+        msg.post(screen_collectionproxy_loader .. screen, "unload")
+end
+
+
+-- for popups later 
+-- maybe do screen groups?
+function disable_screen(screen)
+end
+
+function enable_screen(screen)
+end
+
+
+function init(self)
+	self.loading = false
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("switch_screen") then
+		load_screen(self,message.screen)
+		unload_screen(self.current_screen)
+		self.current_screen = message.screen
+		self.loading = true
+		self.start_loading_time = os.clock()
+	elseif message_id == hash("load_modal") then
+	elseif message_id == hash("unload_modal") then
+    elseif message_id == hash("proxy_loaded") then
+        msg.post(self.current_screen, "enable")
+        msg.post(self.current_screen, "acquire_input_focus")
+        self.loading = false
+        print(self.current_screen .. " is loaded and it took " .. os.clock() - self.start_loading_time)
+    end	
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

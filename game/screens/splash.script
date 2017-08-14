@@ -17,6 +17,7 @@ function update(self, dt)
 	self.timer = self.timer + 1
 	
 	if self.timer == 100 then
+		-- hide one logo show the other		
 		msg.post("logo#logo_subsoap", "disable")
 		msg.post("logo#logo_pixcade", "enable")
 	end

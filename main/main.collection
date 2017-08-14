@@ -39,6 +39,46 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "config"
+  prototype: "/utils/config.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "router"
+  prototype: "/utils/router.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "screen_size"
@@ -184,6 +224,8 @@ embedded_instances {
 embedded_instances {
   id: "_utils"
   children: "audio"
+  children: "config"
+  children: "router"
   data: ""
   position {
     x: 0.0
