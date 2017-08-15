@@ -10,7 +10,7 @@ function load_screen(self, screen)
 end
 
 function unload_screen(screen)
-		msg.post(screen_collectionproxy_loader .. screen, "release_input_focus")
+		msg.post(screen .. ":/script", "release_input_focus")
         msg.post(screen_collectionproxy_loader .. screen, "disable")
         msg.post(screen_collectionproxy_loader .. screen, "final")
         msg.post(screen_collectionproxy_loader .. screen, "unload")
@@ -43,15 +43,19 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("switch_screen") then
 		load_screen(self,message.screen)
-		unload_screen(self.current_screen)
+		pprint(message)
+		if self.current_screen ~= nil then
+			unload_screen(self.current_screen)
+		end
 		self.current_screen = message.screen
 		self.loading = true
 		self.start_loading_time = os.clock()
 	elseif message_id == hash("load_modal") then
 	elseif message_id == hash("unload_modal") then
     elseif message_id == hash("proxy_loaded") then
-        msg.post(self.current_screen, "enable")
-        msg.post(self.current_screen, "acquire_input_focus")
+        msg.post(screen_collectionproxy_loader .. self.current_screen, "enable")
+        msg.post(self.current_screen .. ":/script", "acquire_input_focus") -- have to talk to socket not collectionproxy
+        pprint(screen_collectionproxy_loader .. self.current_screen)
         self.loading = false
         print(self.current_screen .. " is loaded and it took " .. os.clock() - self.start_loading_time)
     end	

@@ -1,11 +1,11 @@
 
 
 function init(self)
-	msg.post("collectionproxy_loaders#collectionproxy_splash", "async_load")
-	msg.post(".", "acquire_input_focus")
+	msg.post("main:/router", "switch_screen", {screen = "splash"})
 end
 
 function final(self)
+	
 end
 
 function update(self, dt)
@@ -13,24 +13,14 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("goto_game") then
-        msg.post("collectionproxy_loaders#collectionproxy_game", "async_load")
-        -- store sender for later notification
-        self.loader = sender        
-    elseif message_id == hash("proxy_loaded") then
-        -- enable the collection and let the loader know
-        msg.post(sender, "enable")
-        --msg.post(self.loader, message_id)
-    end	
+
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-	--pprint(action)
+	
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
+
+
 end
