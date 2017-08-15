@@ -62,7 +62,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: false
-  layer: ""
+  layer: "3"
   inherit_alpha: true
   alpha: 1.0
   outline_alpha: 1.0
@@ -104,7 +104,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_start"
-  layer: ""
+  layer: "3"
   inherit_alpha: true
   alpha: 1.0
   template: "/defui/themes/light_ui/widgets/button.gui"
@@ -130,7 +130,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
+    x: 400.0
     y: 88.0
     z: 0.0
     w: 1.0
@@ -162,6 +162,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -198,7 +199,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Start"
+  text: "Toggle Profiler"
   font: "larryfont"
   id: "btn_start/larrylabel"
   xanchor: XANCHOR_NONE
@@ -262,7 +263,7 @@ nodes {
   }
   type: TYPE_TEMPLATE
   id: "btn_info"
-  layer: ""
+  layer: "3"
   inherit_alpha: true
   alpha: 1.0
   template: "/defui/themes/light_ui/widgets/button.gui"
@@ -288,7 +289,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
+    x: 500.0
     y: 88.0
     z: 0.0
     w: 1.0
@@ -320,6 +321,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -356,7 +358,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Info"
+  text: "Toggle Fade"
   font: "larryfont"
   id: "btn_info/larrylabel"
   xanchor: XANCHOR_NONE
@@ -386,6 +388,15 @@ nodes {
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
+}
+layers {
+  name: "1"
+}
+layers {
+  name: "2"
+}
+layers {
+  name: "3"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,0 +1,101 @@
+
+-- This overlay will fill the screen with a solid color
+-- Use it below popups or pause screens to overlay the game screen or lower z level menus
+
+function fade_out(self)
+	self.fading = true
+	self.fading_timer = 100
+	self.fading_out = true
+	self.pre_fade_color = gui.get_color(self.shade)
+end
+
+function fade_in(self)
+	self.fading = true
+	self.fading_timer = 0
+	self.fading_in = true
+	self.pre_fade_color = gui.get_color(self.shade)
+end
+
+function init(self)
+	
+	local color = vmath.vector4(0,0,0,1)
+	
+	local width, height = gui.get_width(), gui.get_height()
+	local position = vmath.vector3(width / 2, height / 2, 0)
+	local size = vmath.vector3(width * 1, height * 1, 0)
+	local shade = gui.new_box_node(position,size)
+	-- todo have a gui layer sorting stack or something
+	gui.set_render_order(10)
+	gui.set_adjust_mode(shade, gui.ADJUST_ZOOM)
+	gui.set_color(shade,color)
+	self.shade = shade
+	
+	self.fading = false
+	self.fading_out = false
+	self.fading_in = false
+	self.fading_timer = 0
+	self.color_mod = vmath.vector4(0,0,0,1)
+	
+	fade_out(self)
+end
+
+
+
+function final(self)
+	
+end
+
+function update(self, dt)
+	if (self.fading_timer < 0.1 and self.fading_timer > 0) or (self.fading_timer < 0) and self.fading_out == true then
+		self.fading_timer = 0
+		self.fading_out = false
+		self.fading = false
+		self.color_mod.w = 0
+		gui.set_color(self.shade, self.color_mod)		
+	end
+	if self.fading_timer > 0 and self.fading_out == true then
+		self.color_mod = self.pre_fade_color
+		self.color_mod.w = self.fading_timer * 0.01
+		
+		gui.set_color(self.shade, self.color_mod)
+		--gui.set_color(self.shade, self.pre_fade_color * vmath.vector4(1,1,1,self.fading_timer*0.01))
+		
+		self.fading_timer = self.fading_timer - 60 * dt - (100 - self.fading_timer) / 6
+	end
+	
+	if (self.fading_timer > 99.9 and self.fading_timer < 100) or (self.fading_timer > 100) and self.fading_in == true then
+		self.fading_timer = 100
+		self.fading_in = false
+		self.fading = false
+		self.color_mod.w = 1
+		gui.set_color(self.shade, self.color_mod)
+	end
+	if self.fading_timer < 100 and self.fading_in == true then
+		self.color_mod = self.pre_fade_color
+		self.color_mod.w = self.fading_timer * 0.01
+		
+		gui.set_color(self.shade, self.color_mod)
+		--gui.set_color(self.shade, self.pre_fade_color * vmath.vector4(1,1,1,self.fading_timer*0.01))
+		
+		self.fading_timer = self.fading_timer + 60 * dt + (100 - self.fading_timer) / 6
+	end	
+	
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("fade_in") and self.fading == false then
+		fade_in(self)
+	elseif message_id == hash("fade_out") and self.fading == false then
+		fade_out(self)
+	end
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end

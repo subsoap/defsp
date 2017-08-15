@@ -1,6 +1,6 @@
 components {
   id: "console"
-  component: "/utils/console.script"
+  component: "/utils/log.script"
   position {
     x: 0.0
     y: 0.0

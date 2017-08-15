@@ -7,8 +7,7 @@
 
 
 function init(self)
-	-- Add initialization code here
-	-- Remove this function if not needed
+	self.logging = false
 end
 
 function final(self)
@@ -22,8 +21,13 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash("enable_logging") then
+		self.logging = true
+	elseif message_id == hash("disable_logging") then
+		self.logging = false
+	end
+	
+	if message_id == 
 end
 
 function on_input(self, action_id, action)
