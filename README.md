@@ -15,12 +15,13 @@ Perhaps Defold in the future will include ability to create new projects based o
 
 This starter project has these features:
 * Fixed aspect ratio render script
-* This version is meant for portrait based projects with resolution of 640x1136
+* This version is meant for portrait based projects with resolution of 640x1136 (making it fully res and orientation agnostic is TODO)
 * game.input populated with most useful keys
-* Screen system setup : start, main menu, game, settings, about, sub menu
+* Screen system setup : start, main menu, game, settings, about, sub menu (NOT SETUP YET)
 * Resource folder hierarchy 
 * Screen fading to and from a solid color based on an overlay
 * Make solid color overly (such as black) appear between GUI layers / above game layer
+* Multi language localization support with autofit for text
 
 ## Dependencies
 
@@ -35,5 +36,5 @@ These are already setup in the project but listed here for reference.
 * Flexible portait / landscape - atm hardcoded things
 * DefOS native quality of life
 * Sound manager
-* Localization ready to go
+
 

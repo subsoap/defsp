@@ -10,6 +10,7 @@ function init(self)
 	
 	locale.set_text(gui.get_node("btn_toggle_profiler/label"))
 	locale.set_text(gui.get_node("btn_toggle_fade/label"))
+	locale.set_text(gui.get_node("btn_key_does_not_exist/label"))
 	
 end
 

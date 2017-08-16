@@ -18,7 +18,7 @@ return {
 en = {
 	MISSING_KEY = "!!! MISSING KEY !!!",
 	LANGUAGE_NAME = "English",
-	TOGGLE_PROFILER = "Toggle Profiler",
+	TOGGLE_PROFILER = "Toggle Profiler (Extra Long Super Long String)",
 	TOGGLE_FADE = "Toggle Fade",
 },
 

@@ -186,7 +186,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 350.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -225,6 +225,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 4
   overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
@@ -447,7 +448,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 300.0
+    x: 400.0
     y: 88.0
     z: 0.0
     w: 1.0
@@ -479,6 +480,7 @@ nodes {
   clipping_visible: true
   clipping_inverted: false
   alpha: 1.0
+  overridden_fields: 4
   template_node_child: true
   size_mode: SIZE_MODE_MANUAL
 }
@@ -502,7 +504,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 200.0
+    x: 350.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -515,7 +517,7 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "MISSING_KEY"
+  text: "A_MISSING_KEY"
   font: "font"
   id: "btn_key_does_not_exist/label"
   xanchor: XANCHOR_NONE
@@ -541,6 +543,7 @@ nodes {
   alpha: 1.0
   outline_alpha: 1.0
   shadow_alpha: 1.0
+  overridden_fields: 4
   overridden_fields: 8
   template_node_child: true
   text_leading: 1.0
