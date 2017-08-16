@@ -7,15 +7,7 @@ function init(self)
 	self.faded = false
 end
 
-function toggle_fade(self)
-	if self.faded == false then
-		self.faded = true
-		msg.post("main:/shade","fade_in")
-	else
-		self.faded = false
-		msg.post("main:/shade","fade_out")
-	end
-end
+
 
 
 function on_message(self, message_id, message, sender)
@@ -30,7 +22,8 @@ function on_input(self, action_id, action)
 	end)
 	defui:button("btn_info", action_id, action, function()
 		config_state.info = "this"
-		toggle_fade(self)
-		pprint(config_state)
+		
+		msg.post("main:/transition","toggle_fade")
+		
 	end)
 end

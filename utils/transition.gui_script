@@ -2,6 +2,18 @@
 -- This overlay will fill the screen with a solid color
 -- Use it below popups or pause screens to overlay the game screen or lower z level menus
 
+-- TODO improve this to be a full fullscreen transition (wipes etc.) util
+
+function toggle_fade(self)
+	if self.faded == false then
+		self.faded = true
+		msg.post("main:/transition","fade_in")
+	else
+		self.faded = false
+		msg.post("main:/transition","fade_out")
+	end
+end
+
 function fade_out(self)
 	self.fading = true
 	self.fading_timer = 100
@@ -30,6 +42,7 @@ function init(self)
 	gui.set_color(shade,color)
 	self.shade = shade
 	
+	self.faded = false
 	self.fading = false
 	self.fading_out = false
 	self.fading_in = false
@@ -83,6 +96,7 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	if message_id == hash("toggle_fade") and self.fading == false then toggle_fade(self) end
 	if message_id == hash("fade_in") and self.fading == false then
 		fade_in(self)
 	elseif message_id == hash("fade_out") and self.fading == false then

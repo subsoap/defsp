@@ -1,6 +1,6 @@
 components {
   id: "shade"
-  component: "/game/screens/overlays/shade.gui"
+  component: "/utils/transition.gui"
   position {
     x: 0.0
     y: 0.0

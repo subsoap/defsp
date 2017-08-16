@@ -19,6 +19,8 @@ This starter project has these features:
 * game.input populated with most useful keys
 * Screen system setup : start, main menu, game, settings, about, sub menu
 * Resource folder hierarchy 
+* Screen fading to and from a solid color based on an overlay
+* Make solid color overly (such as black) appear between GUI layers / above game layer
 
 ## Dependencies
 

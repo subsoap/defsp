@@ -80,8 +80,8 @@ instances {
   }
 }
 instances {
-  id: "shade"
-  prototype: "/game/screens/overlays/shade.go"
+  id: "transition"
+  prototype: "/utils/transition.go"
   position {
     x: 0.0
     y: 0.0
@@ -246,7 +246,7 @@ embedded_instances {
   children: "audio"
   children: "config"
   children: "router"
-  children: "shade"
+  children: "transition"
   data: ""
   position {
     x: 0.0

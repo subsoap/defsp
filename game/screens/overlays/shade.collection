@@ -4,7 +4,7 @@ embedded_instances {
   id: "shade"
   data: "components {\n"
   "  id: \"shade\"\n"
-  "  component: \"/game/screens/overlays/shade.gui\"\n"
+  "  component: \"/utils/transition.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
