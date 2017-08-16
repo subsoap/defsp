@@ -1,7 +1,10 @@
-
+local locale = require("utils.locale")
 
 function init(self)
 	msg.post("main:/router", "switch_screen", {screen = "splash"})
+	locale.init()
+	print(locale.language)
+	print(locale.languages[locale.language].LANGUAGE_NAME)
 end
 
 function final(self)
