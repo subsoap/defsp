@@ -1,0 +1,12 @@
+images {
+  image: "/game/assets/cursors/cursor.png"
+}
+images {
+  image: "/game/assets/cursors/cursor_shadow.png"
+}
+images {
+  image: "/game/assets/cursors/cursor_ghost.png"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 2
