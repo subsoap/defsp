@@ -44,5 +44,8 @@ These are already setup in the project but listed here for reference.
 * Flexible portait / landscape - atm hardcoded things
 * DefOS native quality of life
 * Sound manager
+* Achievement list screen
+* Credits screen
+
 
 
