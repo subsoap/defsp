@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "audio_global"
   type: "collectionproxy"
-  data: "collection: \"/game/assets/audio/global.collection\"\n"
+  data: "collection: \"/game/assets/audio/audio.collection\"\n"
   "exclude: false\n"
   ""
   position {

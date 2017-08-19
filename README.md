@@ -23,9 +23,9 @@ This starter project has these features:
 * Screen fading to and from a solid color based on an overlay
 * Make solid color overly (such as black) appear between GUI layers / above game layer
 * Multi language localization support with autofit for text
-* Software mouse cursors with different graphic states based on buttons or contexts (hardware cursor TODO)
+* Software mouse cursors with different graphic states based on buttons or contexts - you can tell that software cursor lags a little but would still be OK (hardware cursor TODO) (DefOS TODO to disable and get more hardware cursor info so can track when outside of game window and hide software cursor / move it)
 * IAP with full version activation, consumable management, recovery (not yet)
-* Ad network support via Enhance / Appodeal (not yet)
+* Ad network support via Enhance / Appodeal (not yet) (rewarded videos, banners)
 
 
 ## Dependencies
@@ -43,8 +43,9 @@ These are already setup in the project but listed here for reference.
 
 * Flexible portait / landscape - atm hardcoded things
 * DefOS native quality of life
-* Sound manager
-* Achievement list screen
+* Sound manager via debeat
+* Achievement list screen with achievement tracking
+* State screen with stat tracking
 * Credits screen
 
 
