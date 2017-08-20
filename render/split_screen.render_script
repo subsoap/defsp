@@ -33,7 +33,20 @@ local function render_view(self, view, x, y, width, height)
 	render.disable_state(render.STATE_CULL_FACE)
 
 	-- center (and zoom out if needed)
-	local zoom_factor = math.min(math.min(current_width / original_width, current_height / original_height), 1)
+	local zoom_factor
+	if original_width > original_height then
+		if original_width < current_width then
+			zoom_factor = math.max(math.min(current_width / original_width, current_height / original_height), 1)
+		else
+			zoom_factor = math.min(math.min(current_width / original_width, current_height / original_height), 1)
+		end
+	else
+		if original_height < current_height then
+			zoom_factor = math.max(math.min(current_width / original_width, current_height / original_height), 1)
+		else
+			zoom_factor = math.min(math.min(current_width / original_width, current_height / original_height), 1)
+		end		
+	end
 	local projected_width = current_width / zoom_factor
 	local projected_height = current_height / zoom_factor
 	local xoffset = -(projected_width - original_width) / 2
