@@ -1,12 +1,19 @@
 local gui_render_order = require("utils.gui_render_order")
+local sys_info = require("utils.sys_info")
 
 
 function init(self)
-	msg.post(".", "acquire_input_focus")
-	gui.set_render_order(gui_render_order.CURSOR)
-	self.node = gui.get_node("box")
-	self.position = vmath.vector3(0,0,0)
-	self.counter = 0
+	self.enabled = true
+	if sys_info.is_android() or sys_info.is_ios() then
+		self.enabled = false
+	end
+	if self.enabled == true then
+		msg.post(".", "acquire_input_focus")
+		gui.set_render_order(gui_render_order.CURSOR)
+		self.node = gui.get_node("box")
+		self.position = vmath.vector3(0,0,0)
+		self.counter = 0
+	end
 end
 
 function final(self)
@@ -26,9 +33,11 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	self.position.x = action.x 
-	self.position.y = action.y 
-	gui.set_position(self.node,self.position)
+	if self.enabled == true then
+		self.position.x = action.x 
+		self.position.y = action.y 
+		gui.set_position(self.node,self.position)
+	end
 end
 
 function on_reload(self)

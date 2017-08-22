@@ -1,7 +1,8 @@
 local mixer = require("debeat.mixer")
 
 function init(self)
-	mixer.play(msg.url("#sound"))
+	self.wait = 0
+	
 end
 
 function final(self)
@@ -10,8 +11,12 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	if self.wait < 40 and self.wait ~= -1 then
+		self.wait = self.wait + 1
+	elseif self.wait ~= -1 then
+		self.wait = -1
+		mixer.play(msg.url("#sound"))
+	end
 end
 
 function on_message(self, message_id, message, sender)

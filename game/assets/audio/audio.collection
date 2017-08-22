@@ -40,7 +40,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"sound\"\n"
   "  type: \"sound\"\n"
-  "  data: \"sound: \\\"/game/assets/audio/global/cafe.ogg\\\"\\n"
+  "  data: \"sound: \\\"/game/assets/audio/global/magical_night.ogg\\\"\\n"
   "looping: 1\\n"
   "group: \\\"master\\\"\\n"
   "gain: 1.0\\n"
