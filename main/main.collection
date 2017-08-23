@@ -1,6 +1,6 @@
 name: "main"
 instances {
-  id: "console"
+  id: "defcon"
   prototype: "/defcon/console.go"
   position {
     x: 0.0
@@ -102,6 +102,26 @@ instances {
 instances {
   id: "cursor"
   prototype: "/utils/cursor/cursor.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "console"
+  prototype: "/utils/console/console.go"
   position {
     x: 0.0
     y: 0.0
@@ -284,6 +304,7 @@ embedded_instances {
 embedded_instances {
   id: "_utils"
   children: "config"
+  children: "console"
   children: "cursor"
   children: "mixer"
   children: "router"

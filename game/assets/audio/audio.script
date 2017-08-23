@@ -15,7 +15,7 @@ function update(self, dt)
 		self.wait = self.wait + 1
 	elseif self.wait ~= -1 then
 		self.wait = -1
-		mixer.play(msg.url("#sound"))
+		--mixer.play(msg.url("#sound"))
 	end
 end
 

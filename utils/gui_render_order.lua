@@ -16,7 +16,8 @@ M.MIDDLE_FADE_TRANSITION = 3 -- reserved for solid black (or any color) fader la
 M.PAUSE = 4 -- pause screen dialog / menu
 M.NOTICE = 5 -- toasts, notifications
 
-M.CURSOR = 15 -- reserved for cursor sprites
+M.CURSOR = 14 -- reserved for cursor sprites
+M.CONSOLE = 15 -- debug console overlay
 
 
 return M
