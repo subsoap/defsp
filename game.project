@@ -18,6 +18,7 @@ width = 640
 height = 1136
 variable_dt = 1
 fullscreen = 0
+display_profiles = /builtins/render/default.display_profilesc
 
 [physics]
 scale = 0.02
